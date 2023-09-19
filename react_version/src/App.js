@@ -1,8 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react'
+import { evaluate } from 'mathjs';
 
-function App() {
+export default function App() {
   const [input, setInput] = useState("");
   const operators = ['+', '-', '*', '/']
 
@@ -18,7 +19,14 @@ function App() {
     }
   }
 
-  const calcular = (val) => {
+  const calc = () => {
+    const lIndex = input[input.length - 1]
+    if (input === "" || operators.includes(lIndex)) {
+      return input;
+    } else {
+      // console.log(evaluate(input))
+      setInput(evaluate(input));
+    }
     
   }
 
@@ -45,7 +53,13 @@ function App() {
         <Button onClick={insertOperator}>+</Button>
       </div>
       <div className="buttons">
-        <Button onClick={calcular}>=</Button>
+        <Button onClick={insertNum}>0</Button>
+        <Button onClick={insertNum}>.</Button>
+        <Button onClick={() => setInput("")}>C</Button>
+        <Button onClick={insertNum}>-</Button>
+      </div>
+      <div className="buttons">
+        <Button onClick={() => calc()}>=</Button>
       </div>
     </div>
     </>
@@ -56,14 +70,17 @@ function Button({children, onClick, isInput}) {
   const isNum = (val) => (!isNaN(val) || val === 'C' || val === '.') ? true : false;
   const isEqSign = (val) => (val === "=") ? true : false;
 
+  const c = {color: "red"}
+
   return (
     <>
       {isInput ? (<div className="input">{children}</div>) 
       : (
-        <div 
+        <div
           className={`btn ${isEqSign(children) ? "equal" : null}
           ${isNum(children) ? null : "operator"}`}
           onClick={() => onClick(children)}
+          style={children === 'C' ? c : null}
         >
           {children}
         </div>
@@ -71,5 +88,3 @@ function Button({children, onClick, isInput}) {
     </>
   )
 }
-
-export default App;
