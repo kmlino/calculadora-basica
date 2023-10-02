@@ -2,7 +2,7 @@ var ultimaOperacao = false;
 var operador01;
 var operacao;
     function clicarNum(n){   
-       var saida = document.getElementById("res")
+       var saida = document.getElementsByClassName("res")
     if(ultimaOperacao){
                 saida.innerHTML = n;
         ultimaOperacao = false;
@@ -13,14 +13,14 @@ var operacao;
     }
 
     function clicarOp(op){
-        operador01 = parseFloat(document.getElementById("res").innerHTML);
+        operador01 = parseFloat(document.getElementsByClassName("res").innerHTML);
         operacao = op;
         ultimaOperacao = true;
     }
 
     function clicarIgual(){
-        var saida = document.getElementById("res");
-        var operador02 = parseFloat(document.getElementById("res").innerHTML);
+        var saida = document.getElementsByClassName("res");
+        var operador02 = parseFloat(document.getElementsByClassName("res").innerHTML);
 
         switch (operacao){
             case

@@ -6,46 +6,36 @@
 	<title>Calculadora</title>
 </head>
 <body>
-	<header>
-		<div class="container" id="cabecalho">
-			<div id="logo">
-				<!-- <img src="1.jpg"> -->
-				<h2>Calculadora</h2>
+	<div class="container">
+		<div class="app">
+			<h2 style="text-align: center;">Calculadora</h2>
+		<div class="res">0</div>
+		<div class="tabela">
+			<div class="numeros">
+				<button class="btn" onclick="clicarNum(7)">7</button>
+				<button class="btn" onclick="clicarNum(8)">8</button>
+				<button class="btn" onclick="clicarNum(9)">9</button>
+				<button class="btn btn-op" onclick="clicarOp('div')">/</button>
+			</div>
+			<div class="numeros">
+				<button class="btn" onclick="clicarNum(4)">4</button>
+				<button class="btn" onclick="clicarNum(5)">5</button>
+				<button class="btn" onclick="clicarNum(6)">6</button>
+				<button class="btn btn-op" onclick="clicarOp('mult')">*</button>
+			</div>
+			<div class="numeros">
+				<button class="btn" onclick="clicarNum(1)">1</button>
+				<button class="btn" onclick="clicarNum(2)">2</button>
+				<button class="btn" onclick="clicarNum(3)">3</button>
+				<button class="btn btn-op" onclick="clicarOp('soma')">+</button>
+			</div>
+			<div class="numeros">
+				<button class="btn" onclick="clicarNum(0)">0</button>
+				<button class="btn btn-ig" onclick="clicarIgual()">=</button>
+				<button class="btn btn-reset">C</button>
+				<button class="btn btn-op" onclick="clicarOp('sub')">-</button>
 			</div>
 		</div>
-	</header>
-
-
-	<div id="divPrincipal" class="container">
-		<div id= "tabela">
-			<div id="res">0</div>
-			<!-- Tabela já pronta para uso com ou sem JQuery -->
-			<table>
-				<tr class="numeros" >
-					<td><button id="btn7" class="btn" value="7" onclick="clicarNum(7)">7</button><td>
-					<td><button id="btn8" class="btn" value="8" onclick="clicarNum(8)">8</button><td>
-					<td><button id="btn9" class="btn" value="9" onclick="clicarNum(9)">9</button><td>
-					<td><button id="div" class="btnOp" value="/" onclick="clicarOp('div')">/</button><td>
-				</tr>
-				<tr class="numeros" >
-					<td><button id="btn4" class="btn" value="4" onclick="clicarNum(4)">4</button><td>
-					<td><button id="btn5" class="btn" value="5" onclick="clicarNum(5)">5</button><td>
-					<td><button id="btn6" class="btn" value="6" onclick="clicarNum(6)">6</button><td>
-					<td><button id="sub" class="btnOp" value="-" onclick="clicarOp('sub')">-</button><td>
-				</tr>
-				<tr class="numeros" >
-					<td><button id="btn1" class="btn" value="1" onclick="clicarNum(1)">1</button><td>
-					<td><button id="btn2" class="btn" value="2" onclick="clicarNum(2)">2</button><td>
-					<td><button id="btn3" class="btn" value="3" onclick="clicarNum(3)">3</button><td>
-					<td><button id="sum" class="btnOp" value="+" onclick="clicarOp('sum')">+</button><td>
-				</tr>
-				<tr class="numeros" >
-					<td><button id="btn0" class="btn" value="0" onclick="clicarNum(0)">0</button><td>
-					<td><button id="mult" class="btnOp" value="*" onclick="clicarOp('mult')">x</button><td>
-					<td><button id="igual" class="btnIg" value="=" onclick="clicarIgual()">=</button><td>
-					<td><button id="reset" class="btn"><-</button><td>
-				</tr>
-			</table>
 		</div>
 	</div>
 	<!-- Script com comandos JavaScript puros -->
@@ -54,9 +44,5 @@
 	<!-- Script com comandos em JQuery *main.js* -->
 	<script type="text/javascript" src="jquery.js"></script>
 	<script type="text/javascript" src="main.js"></script>
-	
 </body>
-<footer style="text-align: center">
-	<h4>Developed By <a target="blank" href="https://www.linkedin.com/in/kennedy-matheus-1522a2135/">Kennedy</a> </h4>
-</footer>
 </html>
